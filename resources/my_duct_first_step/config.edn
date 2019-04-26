@@ -1,0 +1,17 @@
+{:duct.profile/base
+ {:duct.core/project-ns my-duct-first-step
+
+  :duct.router/cascading
+  [#ig/ref :my-duct-first-step.handler/example]
+
+  :my-duct-first-step.handler/example
+  {:db #ig/ref :duct.database/sql}}
+
+ :duct.profile/dev   #duct/include "dev"
+ :duct.profile/local #duct/include "local"
+ :duct.profile/prod  {}
+
+ :duct.module/logging {}
+ :duct.module.web/site {}
+ :duct.module/sql {}
+ :duct.module/cljs {:main my-duct-first-step.client}}
